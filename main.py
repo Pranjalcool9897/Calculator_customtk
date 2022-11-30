@@ -16,7 +16,9 @@ equation=""
 ##============================functions==================================================
 
 def clear():
+    global equation
     result_entry.delete(0,i)
+
 def show(value):
     global i
     global equation
@@ -26,7 +28,13 @@ def show(value):
 def calculate():
     global equation
     clear()
-    result=eval(equation)
+    result=""
+    try:
+        result=eval(equation)
+    finally:
+        equation=""
+    equation=""
+
     result_entry.insert(0,result)
 
 ##====================Entry=====================================================================
