@@ -16,7 +16,7 @@ equation=""
 ##============================functions==================================================
 
 def clear():
-    result_entry.delete(0,END)
+    result_entry.delete(0,i)
 def show(value):
     global i
     global equation
