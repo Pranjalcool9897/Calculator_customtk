@@ -23,7 +23,11 @@ def show(value):
     equation+=value
     result_entry.insert(i,value)
     i+=1
-
+def calculate():
+    global equation
+    clear()
+    result=eval(equation)
+    result_entry.insert(0,result)
 
 ##====================Entry=====================================================================
 result_entry=ctk.CTkEntry(root,text_font=font1,width=500,height=90,corner_radius=10,border_color="lightgreen")
@@ -66,7 +70,7 @@ button16=ctk.CTkButton(root,text="3",command=lambda :show("3"),text_font=font1,r
 button16.place(x=380,y=370)
 button17=ctk.CTkButton(root,text=".",command=lambda :show("."),text_font=font1,relief="raised",width=130,height=115,fg_color="grey",hover_color="purple")
 button17.place(x=5,y=460)
-button18=ctk.CTkButton(root,text="=",command=clear,text_font=font1,relief="raised",width=350,height=115,fg_color="#b5520b",hover_color="skyblue")
+button18=ctk.CTkButton(root,text="=",command=calculate,text_font=font1,relief="raised",width=350,height=115,fg_color="#b5520b",hover_color="skyblue")
 button18.place(x=140,y=460)
 
 
